@@ -63,7 +63,7 @@ request.end();
 });
 
 app.post("/failure", function(){
-  res.redirect("/")
+  res.redirect("/signup.html")
 });
 
 

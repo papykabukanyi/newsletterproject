@@ -66,11 +66,13 @@ app.post("/failure", function(){
   res.redirect("/")
 });
 
-
-
 app.listen(process.env.PORT || 4000, function(){
-  console.log("server is running on port 4000");
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
+
+// app.listen(process.env.PORT || 4000, function(){
+//   console.log("server is running on port 4000");
+// });
 
 // app.set('port', process.env.PORT || 8080);<br>
 //MailchimpAPIKEY

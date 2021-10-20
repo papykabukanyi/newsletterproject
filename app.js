@@ -1,14 +1,19 @@
 // requiring the npm package I installed
 
 const express = require("express");
-const bodyParser = require("body-Parser");
+
+// BodyParser is deprecated
+// const bodyParser = require("body-Parser");
 const request = require("request");
 const https = require("https");
 
 const app = express();
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+// app.use(bodyParser.urlencoded({extended: true}));
+
 
 
 app.get("/", function(req, res){
@@ -66,7 +71,7 @@ app.post("/failure", function(){
   res.redirect("/")
 });
 
-app.listen(process.env.PORT || 4000, function(){
+app.listen(process.env.PORT || 4004, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 

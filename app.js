@@ -4,6 +4,8 @@ const express = require("express");
 
 // BodyParser is deprecated
 // const bodyParser = require("body-Parser");
+
+
 const request = require("request");
 const https = require("https");
 
@@ -12,6 +14,7 @@ const app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+
 // app.use(bodyParser.urlencoded({extended: true}));
 
 
@@ -74,18 +77,3 @@ app.post("/failure", function(){
 app.listen(process.env.PORT || 4004, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
-// app.listen(process.env.PORT || 4000, function(){
-//   console.log("server is running on port 4000");
-// });
-
-// app.set('port', process.env.PORT || 8080);<br>
-//MailchimpAPIKEY
-// 6b48e53146c25977667f996c2d2a7d16-us5
-// Audience ID
-// 6bf10268f2.
-
-
-//fb69466f1e2c071f0175afe47a087a96-us5
-
-// 2f938a0659
